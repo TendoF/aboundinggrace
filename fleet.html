@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Our Fleet | Abounding Grace Logistics</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.fleet-hero-strip { background:var(--blue); padding:2rem 5%; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; }
+.fhs-item { text-align:center; padding:1.5rem; border-right:1px solid rgba(255,255,255,.2); }
+.fhs-item:last-child { border-right:none; }
+.fhs-num { font-family:'Barlow Condensed',sans-serif; font-size:2.5rem; font-weight:900; color:#fff; line-height:1; }
+.fhs-num span { color:var(--gold); }
+.fhs-lbl { color:rgba(255,255,255,.7); font-size:.82rem; margin-top:.3rem; }
+
+.fleet-main-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.fleet-full-card { background:var(--navy); border-radius:var(--radius); overflow:hidden; border:1px solid rgba(255,255,255,.06); transition:all .3s; }
+.fleet-full-card:hover { transform:translateY(-6px); border-color:rgba(26,79,214,.4); }
+.fleet-full-card-img { height:240px; overflow:hidden; position:relative; }
+.fleet-full-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.fleet-full-card:hover .fleet-full-card-img img { transform:scale(1.06); }
+.fleet-tag { position:absolute; top:12px; left:12px; background:var(--blue); color:#fff; padding:.25rem .8rem; border-radius:999px; font-size:.75rem; font-weight:700; }
+.fleet-full-card-body { padding:1.5rem; }
+.fleet-full-card-body h3 { color:#fff; font-size:1.3rem; margin-bottom:1rem; }
+.specs-table { width:100%; border-collapse:collapse; }
+.specs-table td { padding:.5rem 0; border-bottom:1px solid rgba(255,255,255,.06); font-size:.88rem; }
+.specs-table td:first-child { color:rgba(255,255,255,.45); }
+.specs-table td:last-child { color:#fff; font-weight:600; text-align:right; }
+.specs-table tr:last-child td { border-bottom:none; }
+
+.maintenance-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+
+.safety-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.safety-card { background:#fff; border-radius:var(--radius); padding:1.8rem; border:1.5px solid var(--border); text-align:center; transition:all .3s; }
+.safety-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--blue); }
+.safety-icon { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--cyan)); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; }
+.safety-icon svg { width:26px; height:26px; color:#fff; }
+.safety-card h3 { font-size:1.1rem; color:var(--navy); margin-bottom:.5rem; }
+.safety-card p { font-size:.88rem; color:var(--gray); line-height:1.6; }
+
+.gallery-masonry { columns:3; gap:1rem; margin-top:3rem; }
+.gallery-masonry img { width:100%; border-radius:var(--radius-sm); margin-bottom:1rem; display:block; transition:transform .3s; }
+.gallery-masonry img:hover { transform:scale(1.02); }
+
+@media(max-width:900px){ .fleet-hero-strip{grid-template-columns:1fr 1fr;} .fleet-main-grid{grid-template-columns:1fr 1fr;} .safety-cards{grid-template-columns:1fr 1fr;} .maintenance-grid{grid-template-columns:1fr;} .gallery-masonry{columns:2;} }
+@media(max-width:560px){ .fleet-main-grid{grid-template-columns:1fr;} .safety-cards{grid-template-columns:1fr;} .gallery-masonry{columns:1;} .fleet-hero-strip{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-logo"><a href="index.html"><img src="logo.png" alt="Abounding Grace Logistics"/></a></div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="fleet.html" class="active">Fleet</a>
+    <a href="tracking.html">Track Shipment</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+  </div>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <h1>Our <span>Fleet</span></h1>
+    <p>Heavy-duty, well-maintained trucks built for the toughest overland routes in Southern Africa.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.6)">Fleet</span></div>
+  </div>
+</div>
+
+<!-- FLEET STATS STRIP -->
+<div class="fleet-hero-strip">
+  <div class="fhs-item"><div class="fhs-num">3<span>+</span></div><div class="fhs-lbl">Active Trucks</div></div>
+  <div class="fhs-item"><div class="fhs-num">10<span>+</span></div><div class="fhs-lbl">Tons Per Load</div></div>
+  <div class="fhs-item"><div class="fhs-num">24<span>/7</span></div><div class="fhs-lbl">GPS Tracked</div></div>
+  <div class="fhs-item"><div class="fhs-num">10<span></span></div><div class="fhs-lbl">Target by 2030</div></div>
+</div>
+
+<!-- FLEET CARDS -->
+<section>
+  <div class="text-center">
+    <div class="section-label">The Fleet</div>
+    <h2 class="section-title">International <span>Heavy Duty</span> Trucks</h2>
+    <p class="section-sub" style="margin:0 auto">Our fleet consists of International Heavy Duty trucks — purpose-built for long-haul overland freight in Southern Africa's demanding conditions.</p>
+  </div>
+  <div class="fleet-main-grid">
+    <div class="fleet-full-card">
+      <div class="fleet-full-card-img">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=700&q=80" alt="AGL Truck 01"/>
+        <span class="fleet-tag">AGL TRUCK 01</span>
+      </div>
+      <div class="fleet-full-card-body">
+        <h3>Freightliner FLD 120</h3>
+        <table class="specs-table">
+          <tr><td>Type</td><td>International Heavy Duty</td></tr>
+          <tr><td>Configuration</td><td>Tri-Axle + Flatbed</td></tr>
+          <tr><td>Payload Capacity</td><td>30+ Tons</td></tr>
+          <tr><td>Tracking</td><td>Satellite GPS</td></tr>
+          <tr><td>Status</td><td style="color:#22c55e">Active — In Service</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="fleet-full-card">
+      <div class="fleet-full-card-img">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=700&q=80" alt="AGL Truck 02"/>
+        <span class="fleet-tag">AGL TRUCK 02</span>
+      </div>
+      <div class="fleet-full-card-body">
+        <h3>Volvo FH 480</h3>
+        <table class="specs-table">
+          <tr><td>Type</td><td>International Heavy Duty</td></tr>
+          <tr><td>Configuration</td><td>Tri-Axle + Flatbed</td></tr>
+          <tr><td>Payload Capacity</td><td>30+ Tons</td></tr>
+          <tr><td>Tracking</td><td>Satellite GPS</td></tr>
+          <tr><td>Status</td><td style="color:#22c55e">Active — In Service</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="fleet-full-card">
+      <div class="fleet-full-card-img">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80" alt="AGL Truck 03"/>
+        <span class="fleet-tag">AGL TRUCK 03 (RHD)</span>
+      </div>
+      <div class="fleet-full-card-body">
+        <h3>DAF XF 480</h3>
+        <table class="specs-table">
+          <tr><td>Type</td><td>International Heavy Duty</td></tr>
+          <tr><td>Configuration</td><td>6×4 + Flatbed Trailer</td></tr>
+          <tr><td>Payload Capacity</td><td>30+ Tons</td></tr>
+          <tr><td>Tracking</td><td>Satellite GPS</td></tr>
+          <tr><td>Status</td><td style="color:#22c55e">Active — In Service</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAINTENANCE & SAFETY -->
+<section style="background:var(--off-white)">
+  <div class="maintenance-grid">
+    <div>
+      <div class="section-label">Fleet Maintenance</div>
+      <h2 class="section-title">Always Road-<span>Ready</span></h2>
+      <p style="color:var(--gray);line-height:1.8;margin-bottom:1.5rem">Every truck in our fleet undergoes rigorous maintenance schedules to ensure maximum uptime and zero compromise on safety. Our vehicles are inspected before every long-haul journey.</p>
+      <p style="color:var(--gray);line-height:1.8;margin-bottom:1.5rem">We believe that a well-maintained fleet is the foundation of reliable logistics. Our drivers are trained to perform pre-trip inspections and report any concerns before departure.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem">
+        <div style="background:#fff;border-radius:var(--radius-sm);padding:1.2rem;border:1px solid var(--border)">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;color:var(--blue)">100%</div>
+          <div style="font-size:.85rem;color:var(--gray)">Insured Fleet</div>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius-sm);padding:1.2rem;border:1px solid var(--border)">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;color:var(--blue)">24/7</div>
+          <div style="font-size:.85rem;color:var(--gray)">GPS Monitored</div>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius-sm);padding:1.2rem;border:1px solid var(--border)">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;color:var(--blue)">ZIM</div>
+          <div style="font-size:.85rem;color:var(--gray)">Operator Licensed</div>
+        </div>
+        <div style="background:#fff;border-radius:var(--radius-sm);padding:1.2rem;border:1px solid var(--border)">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:800;color:var(--blue)">30T</div>
+          <div style="font-size:.85rem;color:var(--gray)">Max Payload</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80" alt="Truck Maintenance" style="width:100%;height:420px;object-fit:cover;border-radius:var(--radius)"/>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY FEATURES -->
+<section>
+  <div class="text-center">
+    <div class="section-label">Safety First</div>
+    <h2 class="section-title">Built for Safety at <span>Every Turn</span></h2>
+  </div>
+  <div class="safety-cards">
+    <div class="safety-card">
+      <div class="safety-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
+      <h3>Satellite GPS Tracking</h3>
+      <p>All trucks monitored in real-time via satellite. Live location data transmitted continuously and shared with clients via daily reports.</p>
+    </div>
+    <div class="safety-card">
+      <div class="safety-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+      <h3>Goods-in-Transit Insurance</h3>
+      <p>All cargo is covered by our Zimnat Lion Goods-in-Transit insurance policy from point of loading to final delivery.</p>
+    </div>
+    <div class="safety-card">
+      <div class="safety-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+      <h3>Experienced Drivers</h3>
+      <p>All our drivers are experienced, licenced professionals with in-depth knowledge of Southern African cross-border routes and regulations.</p>
+    </div>
+    <div class="safety-card">
+      <div class="safety-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+      <h3>Pre-Trip Inspections</h3>
+      <p>Every vehicle is inspected before departure. Safety checks include brakes, tyres, lights, load securing, and documentation verification.</p>
+    </div>
+    <div class="safety-card">
+      <div class="safety-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <h3>Scheduled Maintenance</h3>
+      <p>Regular service intervals maintained for all trucks ensuring maximum mechanical reliability on every long-haul journey.</p>
+    </div>
+    <div class="safety-card">
+      <div class="safety-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
+      <h3>24/7 Support Centers</h3>
+      <p>Support service centers in Harare, Beitbridge, Musina, and Gateway — providing roadside assistance along all major routes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section style="background:var(--off-white)">
+  <div class="text-center">
+    <div class="section-label">Fleet Gallery</div>
+    <h2 class="section-title">Our Trucks in <span>Action</span></h2>
+  </div>
+  <div class="gallery-masonry">
+    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80" alt="AGL Truck"/>
+    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&q=80" alt="AGL Fleet"/>
+    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Logistics"/>
+    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80" alt="Road Freight"/>
+    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80" alt="Mining Haulage"/>
+    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&q=80" alt="Cargo Loading"/>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--navy);padding:80px 5%">
+  <div class="cta-banner">
+    <div>
+      <h2>Need Our Fleet for Your Cargo?</h2>
+      <p>Contact us for a free quotation and let's move your goods today.</p>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-gold">Get Free Quote</a>
+      <a href="services.html" class="btn btn-outline">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="logo.png" alt="Abounding Grace Logistics"/><p>Zimbabwe's trusted heavy-duty transport company. Moving bulk cargo across Southern and Central Africa since 2022.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="fleet.html">Fleet</a></li><li><a href="tracking.html">Track Shipment</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Bulk Road Freight</a></li><li><a href="services.html">Contract Haulage</a></li><li><a href="services.html">Mining Transport</a></li><li><a href="services.html">Regional Delivery</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">1486 Tongai Road, Houghton Park, Harare</a></li><li><a href="tel:+263772816090">+263 772 816 090</a></li><li><a href="mailto:jimikchin@gmail.com">jimikchin@gmail.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Abounding Grace Logistics (Pvt) Ltd. All rights reserved.</p><p style="color:rgba(255,255,255,.2)">Reg No. 19347/2021 · Zimbabwe</p></div>
+</footer>
+<script>
+function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+window.addEventListener('scroll',()=>{ document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50); });
+</script>
+</body>
+</html>

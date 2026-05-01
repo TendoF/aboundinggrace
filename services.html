@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Services | Abounding Grace Logistics</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.services-detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:6rem; padding-bottom:6rem; border-bottom:1px solid var(--border); }
+.services-detail-grid:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+.services-detail-grid.reverse { }
+.service-detail-img { border-radius:var(--radius); overflow:hidden; }
+.service-detail-img img { width:100%; height:380px; object-fit:cover; border-radius:var(--radius); }
+.service-detail-body .section-label { margin-bottom:1rem; }
+.service-detail-body h2 { font-size:clamp(1.8rem,3vw,2.8rem); color:var(--navy); margin-bottom:1rem; }
+.service-detail-body p { color:var(--gray); line-height:1.8; font-size:.95rem; margin-bottom:1.2rem; }
+.feature-pills { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.5rem; }
+.pill { background:rgba(26,79,214,.08); color:var(--blue); padding:.4rem 1rem; border-radius:999px; font-size:.82rem; font-weight:600; border:1px solid rgba(26,79,214,.15); }
+
+.pricing-section { background:var(--off-white); }
+.pricing-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.pricing-card { background:#fff; border-radius:var(--radius); padding:2.5rem; border:1.5px solid var(--border); transition:all .3s; text-align:center; position:relative; }
+.pricing-card.featured { border-color:var(--blue); transform:translateY(-8px); box-shadow:var(--shadow); }
+.pricing-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--blue); color:#fff; padding:.3rem 1.2rem; border-radius:999px; font-size:.78rem; font-weight:700; letter-spacing:.06em; white-space:nowrap; }
+.pricing-icon { width:60px; height:60px; border-radius:14px; background:linear-gradient(135deg,var(--blue),var(--cyan)); display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; }
+.pricing-icon svg { width:28px; height:28px; color:#fff; }
+.pricing-card h3 { font-size:1.4rem; color:var(--navy); margin-bottom:.5rem; }
+.pricing-card .price { font-family:'Barlow Condensed',sans-serif; font-size:2rem; font-weight:800; color:var(--blue); margin-bottom:1rem; }
+.pricing-card ul { text-align:left; margin-bottom:2rem; }
+.pricing-card ul li { padding:.5rem 0; border-bottom:1px solid var(--border); color:var(--gray); font-size:.9rem; display:flex; align-items:center; gap:.6rem; }
+.pricing-card ul li::before { content:'✓'; color:var(--blue); font-weight:700; flex-shrink:0; }
+
+.industries-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+.industry-card { border-radius:var(--radius); overflow:hidden; position:relative; height:220px; cursor:pointer; }
+.industry-card img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.industry-card:hover img { transform:scale(1.08); }
+.industry-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(10,22,40,.9) 0%,rgba(10,22,40,.2) 60%); display:flex; align-items:flex-end; padding:1.2rem; }
+.industry-overlay h3 { color:#fff; font-size:1.1rem; }
+
+@media(max-width:900px){ .services-detail-grid{grid-template-columns:1fr;} .pricing-cards{grid-template-columns:1fr;} .industries-grid{grid-template-columns:1fr 1fr;} .pricing-card.featured{transform:none;} }
+@media(max-width:500px){ .industries-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-logo"><a href="index.html"><img src="logo.png" alt="Abounding Grace Logistics"/></a></div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="fleet.html">Fleet</a>
+    <a href="tracking.html">Track Shipment</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+  </div>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <h1>Our <span>Services</span></h1>
+    <p>Comprehensive freight and logistics solutions for businesses across Southern and Central Africa.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.6)">Services</span></div>
+  </div>
+</div>
+
+<!-- SERVICES DETAIL -->
+<section>
+  <div class="services-detail-grid">
+    <div class="service-detail-img"><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80" alt="Bulk Road Freight"/></div>
+    <div class="service-detail-body">
+      <div class="section-label">01</div>
+      <h2>Bulk Road <span style="color:var(--blue)">Freight</span></h2>
+      <p>Our primary service — transporting full loads and consolidated cargo across Zimbabwe and the wider Southern African region. We operate 10-ton-plus capacity trucks built for long-haul overland routes.</p>
+      <p>Whether it's a single bulk shipment or ongoing freight needs, we have the fleet and the expertise to move your goods safely and efficiently.</p>
+      <div class="feature-pills">
+        <span class="pill">10+ Tons Capacity</span>
+        <span class="pill">Full Load</span>
+        <span class="pill">Consolidated</span>
+        <span class="pill">Cross-Border</span>
+        <span class="pill">24/7 Tracking</span>
+      </div>
+      <div style="margin-top:2rem"><a href="contact.html" class="btn btn-primary">Request a Quote</a></div>
+    </div>
+  </div>
+
+  <div class="services-detail-grid">
+    <div class="service-detail-body" style="order:1">
+      <div class="section-label">02</div>
+      <h2>Contract <span style="color:var(--blue)">Haulage</span></h2>
+      <p>Long-term contractual agreements for businesses with regular, recurring freight needs. We dedicate fleet capacity to your operations, ensuring predictable scheduling and consistent service quality.</p>
+      <p>Currently contracted with Makomo Resources Mine for coal haulage from Hwange to various destinations — our longest and most trusted partnership.</p>
+      <div class="feature-pills">
+        <span class="pill">Dedicated Fleet</span>
+        <span class="pill">Scheduled Routes</span>
+        <span class="pill">Priority Service</span>
+        <span class="pill">Fixed Rates</span>
+      </div>
+      <div style="margin-top:2rem"><a href="contact.html" class="btn btn-primary">Discuss a Contract</a></div>
+    </div>
+    <div class="service-detail-img" style="order:2"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80" alt="Contract Haulage"/></div>
+  </div>
+
+  <div class="services-detail-grid">
+    <div class="service-detail-img"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80" alt="Mining Ore Transport"/></div>
+    <div class="service-detail-body">
+      <div class="section-label">03</div>
+      <h2>Mining Ore <span style="color:var(--blue)">Transport</span></h2>
+      <p>We have extensive experience transporting large-scale ore movement for multi-national mining operations across Southern Africa. Our drivers are trained for the unique demands of mining logistics including safety compliance and remote site access.</p>
+      <div class="feature-pills">
+        <span class="pill">Ore Haulage</span>
+        <span class="pill">Mining Sites</span>
+        <span class="pill">Cross-Border</span>
+        <span class="pill">Safety Compliant</span>
+      </div>
+      <div style="margin-top:2rem"><a href="contact.html" class="btn btn-primary">Get Mining Quote</a></div>
+    </div>
+  </div>
+
+  <div class="services-detail-grid">
+    <div class="service-detail-body" style="order:1">
+      <div class="section-label">04</div>
+      <h2>Regional & Domestic <span style="color:var(--blue)">Delivery</span></h2>
+      <p>Single-consignment deliveries from one local point to another, or across borders. Ideal for businesses needing flexible, on-demand freight movement without committing to a long-term contract.</p>
+      <p>We cover all routes within Zimbabwe as well as selected routes through South Africa, Zambia, Mozambique, Botswana, and DRC.</p>
+      <div class="feature-pills">
+        <span class="pill">Point to Point</span>
+        <span class="pill">Cross-Border</span>
+        <span class="pill">Flexible Schedule</span>
+        <span class="pill">All Routes</span>
+      </div>
+      <div style="margin-top:2rem"><a href="contact.html" class="btn btn-primary">Book a Delivery</a></div>
+    </div>
+    <div class="service-detail-img" style="order:2"><img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80" alt="Regional Delivery"/></div>
+  </div>
+
+  <div class="services-detail-grid">
+    <div class="service-detail-img"><img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80" alt="Tracking System"/></div>
+    <div class="service-detail-body">
+      <div class="section-label">05</div>
+      <h2>Satellite Cargo <span style="color:var(--blue)">Tracking</span></h2>
+      <p>Every truck in our fleet is equipped with a Cargo Satellite GPS Tracking System. You receive daily status reports detailing the exact location and condition of your cargo at any given time.</p>
+      <p>No more uncertainty. Know exactly where your goods are, 24 hours a day, 7 days a week, anywhere in Southern Africa.</p>
+      <div class="feature-pills">
+        <span class="pill">Real-Time GPS</span>
+        <span class="pill">Daily Reports</span>
+        <span class="pill">24/7 Monitoring</span>
+        <span class="pill">Free for Clients</span>
+      </div>
+      <div style="margin-top:2rem"><a href="tracking.html" class="btn btn-primary">Track a Shipment</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section style="background:var(--navy)">
+  <div class="text-center">
+    <div class="section-label" style="background:rgba(0,180,216,.12);color:var(--cyan);border-color:rgba(0,180,216,.2)">Industries We Serve</div>
+    <h2 class="section-title" style="color:#fff">Built for Your <span style="color:var(--cyan)">Industry</span></h2>
+  </div>
+  <div class="industries-grid">
+    <div class="industry-card">
+      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80" alt="Mining"/>
+      <div class="industry-overlay"><h3>Mining & Resources</h3></div>
+    </div>
+    <div class="industry-card">
+      <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80" alt="Agriculture"/>
+      <div class="industry-overlay"><h3>Agriculture</h3></div>
+    </div>
+    <div class="industry-card">
+      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80" alt="FMCG"/>
+      <div class="industry-overlay"><h3>FMCG & Retail</h3></div>
+    </div>
+    <div class="industry-card">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80" alt="NGO"/>
+      <div class="industry-overlay"><h3>NGOs & Aid</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="text-center">
+    <div class="section-label">Transparent Pricing</div>
+    <h2 class="section-title">Service <span>Packages</span></h2>
+    <p class="section-sub" style="margin:0 auto">All quotes are free. Rates depend on route, cargo type, and volume. Contact us for a precise quotation.</p>
+  </div>
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <div class="pricing-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M1 3h15v13H1zm15 5h4l3 3v5h-7V8z"/></svg></div>
+      <h3>Single Load</h3>
+      <div class="price">On Request</div>
+      <ul>
+        <li>One-off freight movements</li>
+        <li>Full or consolidated load</li>
+        <li>Any domestic or cross-border route</li>
+        <li>Satellite tracking included</li>
+        <li>Free quotation</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;color:var(--blue);border-color:var(--blue)">Get Quote</a>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-badge">MOST POPULAR</div>
+      <div class="pricing-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+      <h3>Contract Service</h3>
+      <div class="price">Negotiated</div>
+      <ul>
+        <li>Dedicated truck(s) for your business</li>
+        <li>Fixed schedule & routes</li>
+        <li>Priority fleet allocation</li>
+        <li>Daily tracking reports</li>
+        <li>Account manager assigned</li>
+        <li>Volume discounts available</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center">Discuss Contract</a>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg></div>
+      <h3>Mining Operations</h3>
+      <div class="price">On Request</div>
+      <ul>
+        <li>Large-scale ore haulage</li>
+        <li>Multi-national mine experience</li>
+        <li>Safety-compliant drivers</li>
+        <li>Remote site access</li>
+        <li>Full documentation support</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;color:var(--blue);border-color:var(--blue)">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--navy);padding:80px 5%">
+  <div class="cta-banner">
+    <div>
+      <h2>Need a Custom Solution?</h2>
+      <p>Every business is different. Let's talk about your specific freight requirements.</p>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="contact.html" class="btn btn-gold">Get Free Quote</a>
+      <a href="tel:+263772816090" class="btn btn-outline">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="logo.png" alt="Abounding Grace Logistics"/><p>Zimbabwe's trusted heavy-duty transport company. Moving bulk cargo across Southern and Central Africa since 2022.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="fleet.html">Fleet</a></li><li><a href="tracking.html">Track Shipment</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Bulk Road Freight</a></li><li><a href="services.html">Contract Haulage</a></li><li><a href="services.html">Mining Transport</a></li><li><a href="services.html">Agricultural Haulage</a></li><li><a href="services.html">Regional Delivery</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">1486 Tongai Road, Houghton Park, Harare</a></li><li><a href="tel:+263772816090">+263 772 816 090</a></li><li><a href="mailto:jimikchin@gmail.com">jimikchin@gmail.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Abounding Grace Logistics (Pvt) Ltd. All rights reserved.</p><p style="color:rgba(255,255,255,.2)">Reg No. 19347/2021 · Zimbabwe</p></div>
+</footer>
+<script>
+function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+window.addEventListener('scroll',()=>{ document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50); });
+</script>
+</body>
+</html>

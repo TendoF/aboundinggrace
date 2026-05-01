@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us | Abounding Grace Logistics</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.mission-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; margin-top:3rem; }
+.mission-card { padding:2.5rem; border-radius:var(--radius); text-align:center; }
+.mission-card.vision { background:var(--navy); }
+.mission-card.mission { background:var(--blue); }
+.mission-card.values { background:linear-gradient(135deg,var(--navy),var(--navy2)); border:1px solid rgba(0,180,216,.2); }
+.mission-card-icon { width:60px; height:60px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; margin:0 auto 1.2rem; }
+.mission-card-icon svg { width:28px; height:28px; color:#fff; }
+.mission-card h3 { color:#fff; font-size:1.4rem; margin-bottom:.8rem; }
+.mission-card p { color:rgba(255,255,255,.7); font-size:.9rem; line-height:1.7; }
+
+.values-list { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
+.value-item { display:flex; align-items:center; gap:.8rem; }
+.value-dot { width:8px; height:8px; border-radius:50%; background:var(--cyan); flex-shrink:0; }
+.value-item span { color:rgba(255,255,255,.75); font-size:.92rem; font-weight:500; }
+
+.story-timeline { position:relative; padding-left:3rem; }
+.story-timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--blue),var(--cyan)); }
+.timeline-event { position:relative; margin-bottom:3rem; }
+.timeline-event::before { content:''; position:absolute; left:-3.3rem; top:6px; width:14px; height:14px; border-radius:50%; background:var(--blue); border:3px solid #fff; box-shadow:0 0 0 3px rgba(26,79,214,.25); }
+.timeline-year { font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:var(--blue); letter-spacing:.08em; margin-bottom:.3rem; }
+.timeline-event h3 { font-size:1.2rem; color:var(--navy); margin-bottom:.4rem; }
+.timeline-event p { color:var(--gray); font-size:.9rem; line-height:1.6; }
+
+.team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.team-card { border-radius:var(--radius); overflow:hidden; background:#fff; border:1px solid var(--border); box-shadow:0 2px 16px rgba(10,22,40,.06); }
+.team-card-img { height:240px; overflow:hidden; }
+.team-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.team-card:hover .team-card-img img { transform:scale(1.05); }
+.team-card-body { padding:1.5rem; }
+.team-card-body h3 { font-size:1.2rem; color:var(--navy); margin-bottom:.3rem; }
+.team-card-body .role { font-size:.85rem; color:var(--blue); font-weight:600; margin-bottom:.6rem; }
+.team-card-body p { font-size:.88rem; color:var(--gray); line-height:1.6; }
+
+.cert-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+.cert-card { background:#fff; border-radius:var(--radius); padding:1.5rem; border:1.5px solid var(--border); text-align:center; transition:all .3s; }
+.cert-card:hover { border-color:var(--blue); transform:translateY(-4px); box-shadow:var(--shadow); }
+.cert-logo { width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--blue),var(--cyan)); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; }
+.cert-logo svg { width:26px; height:26px; color:#fff; }
+.cert-card h3 { font-size:.95rem; color:var(--navy); font-weight:700; margin-bottom:.3rem; }
+.cert-card p { font-size:.8rem; color:var(--gray); line-height:1.5; }
+.cert-badge { display:inline-block; margin-top:.8rem; background:rgba(26,79,214,.08); color:var(--blue); padding:.25rem .8rem; border-radius:999px; font-size:.75rem; font-weight:700; }
+
+@media(max-width:900px){ .mission-grid{grid-template-columns:1fr;} .team-grid{grid-template-columns:1fr 1fr;} .cert-grid{grid-template-columns:1fr 1fr;} }
+@media(max-width:580px){ .team-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} .values-list{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-logo"><a href="index.html"><img src="logo.png" alt="Abounding Grace Logistics"/></a></div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="fleet.html">Fleet</a>
+    <a href="tracking.html">Track Shipment</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+  </div>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <h1>About <span>Us</span></h1>
+    <p>A proudly Zimbabwean logistics company built on trust, reliability, and a passion for connecting Southern Africa.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,.6)">About</span></div>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section>
+  <div class="grid-2">
+    <div>
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">Built From the <span>Ground Up</span></h2>
+      <p style="color:var(--gray);line-height:1.8;margin-bottom:1.2rem">Abounding Grace Logistics (Pvt) Ltd was incorporated on 5 November 2021 and began operations on 1 May 2022 with just 3 trucks. From day one, we set out to be different — a transport company that puts clients first, invests in technology, and never compromises on integrity.</p>
+      <p style="color:var(--gray);line-height:1.8;margin-bottom:1.2rem">Today we operate across six countries, serving some of the most demanding clients in the mining, agriculture, FMCG, and NGO sectors. Our satellite-tracked fleet handles everything from single consignments to large-scale contract haulage.</p>
+      <p style="color:var(--gray);line-height:1.8;margin-bottom:2rem">Our vision is to grow to 10 heavy-duty trucks by December 2030 and be recognised as the leading bulk goods logistics provider in the Southern African region.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary">Work With Us</a>
+        <a href="fleet.html" class="btn btn-outline" style="color:var(--blue);border-color:var(--blue)">View Our Fleet</a>
+      </div>
+    </div>
+    <div style="position:relative">
+      <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="AGL Truck" style="width:100%;height:420px;object-fit:cover;border-radius:var(--radius)"/>
+      <div style="position:absolute;bottom:-20px;right:-10px;background:var(--blue);color:#fff;padding:1.5rem;border-radius:var(--radius-sm);text-align:center">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:800;line-height:1">2022</div>
+        <div style="font-size:.75rem;opacity:.8">Year Founded</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION VISION VALUES -->
+<section style="background:var(--navy)">
+  <div class="text-center">
+    <div class="section-label" style="background:rgba(0,180,216,.12);color:var(--cyan);border-color:rgba(0,180,216,.2)">Our Foundation</div>
+    <h2 class="section-title" style="color:#fff">Vision, Mission & <span style="color:var(--cyan)">Values</span></h2>
+  </div>
+  <div class="mission-grid">
+    <div class="mission-card vision">
+      <div class="mission-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
+      <h3>Our Vision</h3>
+      <p>To be the safest, most dependable and preferred provider of transport and logistics services — a reliable brand in the Bulk Road Goods transport, consolidations and logistics market in Zimbabwe and Southern Africa.</p>
+    </div>
+    <div class="mission-card mission">
+      <div class="mission-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+      <h3>Our Mission</h3>
+      <p>To provide transportation and logistics services to our customers safely and efficiently by utilising quality personnel and resources, offering cost-effective, environmentally friendly and problem-solving solutions.</p>
+    </div>
+    <div class="mission-card values">
+      <div class="mission-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+      <h3>Our Values</h3>
+      <div class="values-list">
+        <div class="value-item"><div class="value-dot"></div><span>Customer Focus</span></div>
+        <div class="value-item"><div class="value-dot"></div><span>Teamwork</span></div>
+        <div class="value-item"><div class="value-dot"></div><span>Transparency</span></div>
+        <div class="value-item"><div class="value-dot"></div><span>Professionalism</span></div>
+        <div class="value-item"><div class="value-dot"></div><span>Innovation</span></div>
+        <div class="value-item"><div class="value-dot"></div><span>Pro-activeness</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY TIMELINE -->
+<section style="background:var(--off-white)">
+  <div class="grid-2" style="align-items:start">
+    <div>
+      <div class="section-label">Our Journey</div>
+      <h2 class="section-title">Milestones That <span>Define Us</span></h2>
+      <p class="section-sub" style="margin-bottom:3rem">From 3 trucks to a growing regional fleet — here's how we've grown.</p>
+      <div class="story-timeline">
+        <div class="timeline-event">
+          <div class="timeline-year">OCTOBER 2021</div>
+          <h3>Company Incorporated</h3>
+          <p>Abounding Grace Logistics (Pvt) Ltd officially registered under the Companies and Other Business Entities Act, Zimbabwe. Company No. 19347/2021.</p>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-year">MAY 2022</div>
+          <h3>Operations Begin</h3>
+          <p>Launched with 3 International Heavy Duty trucks and began serving clients across Zimbabwe and cross-border routes into South Africa.</p>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-year">APRIL 2022</div>
+          <h3>Operator Licence Granted</h3>
+          <p>Received Operator Licence Certificate (OP00002348) from the Republic of Zimbabwe — licensed for Goods transport operations.</p>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-year">2023 – 2024</div>
+          <h3>Makomo Resources Contract</h3>
+          <p>Secured a major contract with Makomo Resources Mine for coal haulage from Hwange to various destinations. 30-ton loads, ongoing.</p>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-year">JANUARY 2025</div>
+          <h3>PRAZ Registration</h3>
+          <p>Registered with the Procurement Regulatory Authority of Zimbabwe for Bulk and Cargo Transport Services (Category SB005).</p>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-year">MARCH 2025</div>
+          <h3>Goods-in-Transit Insurance</h3>
+          <p>Full Goods-in-Transit insurance policy secured with Zimnat Lion Insurance, covering all cargo on all routes.</p>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-year">2030 TARGET</div>
+          <h3>Fleet Expansion Goal</h3>
+          <p>Our ambition is to grow to 10+ heavy-duty trucks and become the leading bulk logistics provider in the Southern African region.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80" alt="Timeline" style="width:100%;height:380px;object-fit:cover;border-radius:var(--radius);margin-bottom:1.5rem"/>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="card" style="text-align:center">
+          <div class="stat-number">3<span>+</span></div>
+          <div class="stat-label">Heavy Duty Trucks</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="stat-number">24<span>/7</span></div>
+          <div class="stat-label">Satellite Tracking</div>
+        </div>
+        <div class="card" style="text-align:center">
+          <div class="stat-number">100<span>%</span></div>
+          <div class="stat-label">Compliant & Insured</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section>
+  <div class="text-center">
+    <div class="section-label">Our People</div>
+    <h2 class="section-title">Leadership <span>Team</span></h2>
+    <p class="section-sub" style="margin:0 auto">Experienced professionals committed to delivering excellence in every shipment.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-card-img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80" alt="Jimikiel Chinuwo"/></div>
+      <div class="team-card-body">
+        <h3>Jimikiel Chinuwo</h3>
+        <div class="role">Director & Manager</div>
+        <p>Founder and driving force behind Abounding Grace Logistics. Jimikiel oversees all operations, client relationships, and fleet management across the Southern African network.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-img"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500&q=80" alt="Vimhai Shayanowako"/></div>
+      <div class="team-card-body">
+        <h3>Vimhai Shayanowako</h3>
+        <div class="role">Co-Director</div>
+        <p>Co-founder and strategic partner. Vimhai focuses on business development, compliance, and expanding the company's footprint across new markets and sectors.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-img"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&q=80" alt="Clemence Chinuwo"/></div>
+      <div class="team-card-body">
+        <h3>Clemence Chinuwo</h3>
+        <div class="role">Administration Manager</div>
+        <p>Handles all administrative operations, documentation, and client communications. Clemence ensures every shipment is properly documented and every client is kept informed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section style="background:var(--off-white)">
+  <div class="text-center">
+    <div class="section-label">Compliance & Accreditation</div>
+    <h2 class="section-title">Our <span>Certifications</span></h2>
+    <p class="section-sub" style="margin:0 auto">Fully registered, licensed, and compliant with all Zimbabwean and regional regulatory requirements.</p>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+      <h3>Certificate of Incorporation</h3>
+      <p>Registered under the Companies & Other Business Entities Act (Chapter 24:31)</p>
+      <span class="cert-badge">No. 19347/2021</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg></div>
+      <h3>ZIMRA Tax Clearance</h3>
+      <p>Zimbabwe Revenue Authority Tax Clearance Certificate — satisfactory tax position</p>
+      <span class="cert-badge">TIN: 2001473990</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg></div>
+      <h3>PRAZ Registration</h3>
+      <p>Procurement Regulatory Authority of Zimbabwe — Bulk & Cargo Transport Services</p>
+      <span class="cert-badge">SB005 · 2025</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <h3>Operator Licence</h3>
+      <p>Republic of Zimbabwe Road Motor Transportation Act — Goods Operator Licence</p>
+      <span class="cert-badge">OP00002348</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--blue);padding:80px 5%;text-align:center">
+  <h2 style="font-size:clamp(2rem,4vw,3rem);color:#fff;text-transform:uppercase;margin-bottom:1rem">Partner With a Trusted Team</h2>
+  <p style="color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 2rem;font-size:1.05rem">We're committed to being more than just a transporter — we're your logistics partner across Southern Africa.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <a href="contact.html" class="btn btn-gold">Get a Free Quote</a>
+    <a href="services.html" class="btn btn-outline">Our Services</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="logo.png" alt="Abounding Grace Logistics"/><p>Zimbabwe's trusted heavy-duty transport company. Moving bulk cargo across Southern and Central Africa since 2022.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="fleet.html">Fleet</a></li><li><a href="tracking.html">Track Shipment</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Bulk Road Freight</a></li><li><a href="services.html">Contract Haulage</a></li><li><a href="services.html">Mining Transport</a></li><li><a href="services.html">Regional Delivery</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">1486 Tongai Road, Houghton Park, Harare</a></li><li><a href="tel:+263772816090">+263 772 816 090</a></li><li><a href="mailto:jimikchin@gmail.com">jimikchin@gmail.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Abounding Grace Logistics (Pvt) Ltd. All rights reserved.</p><p style="color:rgba(255,255,255,.2)">Reg No. 19347/2021 · Zimbabwe</p></div>
+</footer>
+<script>
+function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+window.addEventListener('scroll',()=>{ document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50); });
+</script>
+</body>
+</html>

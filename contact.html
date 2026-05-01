@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Us | Abounding Grace Logistics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: #060e1a; color: #1e2d3d; overflow-x: hidden; }
+a { text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+:root {
+  --navy:      #04090f;
+  --navy2:     #060e1a;
+  --blue:      #1a4fd6;
+  --blue-lt:   #7aadff;
+  --white:     #ffffff;
+  --off-white: #f7f8fa;
+  --text:      #1e2d3d;
+  --gray:      #6b7280;
+  --border:    #e5e7eb;
+  --gold:      #f0a500;
+  --radius:    12px;
+  --radius-sm: 8px;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%; height: 72px;
+  background: rgba(4,9,15,0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.3s;
+}
+#navbar.scrolled { background: rgba(4,9,15,0.98); }
+.nav-logo img { height: 42px; width: auto; }
+.nav-logo a { display: flex; align-items: center; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-size: 0.84rem; font-weight: 500;
+  color: rgba(255,255,255,0.68); transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links .nav-cta {
+  background: var(--blue); color: #fff;
+  font-weight: 700; font-size: 0.78rem;
+  padding: 0.48rem 1.2rem; border-radius: 5px;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.nav-links .nav-cta:hover { background: #1642b8; box-shadow: 0 4px 18px rgba(26,79,214,0.4); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    display: none; position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: rgba(4,9,15,0.98);
+    flex-direction: column; gap: 0;
+    padding: 1.5rem 5%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); width: 100%; }
+  .nav-links .nav-cta { margin-top: 1rem; text-align: center; }
+}
+
+/* ============================================================
+   SECTION 1 — PAGE HERO
+   ============================================================ */
+.page-hero {
+  position: relative;
+  padding-top: 72px;
+  min-height: 52vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+  background: var(--navy);
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=85') center 40% / cover no-repeat;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(4,9,15,0.97) 0%, rgba(4,9,15,0.90) 50%, rgba(4,9,15,0.60) 100%),
+    linear-gradient(to top, rgba(4,9,15,0.90) 0%, transparent 50%);
+}
+.page-hero-content {
+  position: relative; z-index: 2;
+  padding: 5rem 5.5% 4rem;
+  max-width: 700px;
+}
+.page-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(26,79,214,0.15);
+  border: 1px solid rgba(26,79,214,0.35);
+  color: var(--blue-lt);
+  padding: 0.36rem 0.95rem; border-radius: 4px;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+.page-eyebrow span {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--blue);
+}
+.page-hero-content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 0.96; color: #fff;
+  text-transform: uppercase; letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+.page-hero-content h1 span { color: var(--blue-lt); }
+.page-hero-content p {
+  font-size: 0.97rem; font-weight: 300;
+  color: rgba(255,255,255,0.60);
+  line-height: 1.78; max-width: 480px;
+}
+/* Breadcrumb */
+.breadcrumb {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.73rem; color: rgba(255,255,255,0.40);
+}
+.breadcrumb a { color: rgba(255,255,255,0.40); transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--blue-lt); }
+.breadcrumb .sep { opacity: 0.4; }
+.breadcrumb .current { color: var(--blue-lt); font-weight: 600; }
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: rgba(26,79,214,0.08);
+  border: 1px solid rgba(26,79,214,0.18);
+  color: var(--blue);
+  padding: 0.34rem 0.95rem; border-radius: 40px;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+.section-label::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue);
+}
+.section-label.on-dark {
+  background: rgba(122,173,255,0.10);
+  border-color: rgba(122,173,255,0.20);
+  color: var(--blue-lt);
+}
+.section-label.on-dark::before { background: var(--blue-lt); }
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900; line-height: 1.04;
+  text-transform: uppercase; letter-spacing: 0.02em;
+  margin-bottom: 0.8rem;
+}
+.section-title span { color: var(--blue); }
+.section-title.white { color: #fff; }
+.section-title.white span { color: var(--blue-lt); }
+
+.section-sub {
+  font-size: 0.92rem; color: var(--gray); line-height: 1.75;
+}
+.section-sub.white { color: rgba(255,255,255,0.55); }
+
+/* ============================================================
+   SECTION 2 — CONTACT INFO CARDS
+   ============================================================ */
+.info-section {
+  background: var(--off-white);
+  padding: 5rem 5.5%;
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.info-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(26,79,214,0.10);
+  border-color: rgba(26,79,214,0.25);
+}
+.info-icon {
+  width: 50px; height: 50px; border-radius: 10px;
+  background: rgba(26,79,214,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue); margin-bottom: 1.2rem;
+}
+.info-icon svg { width: 22px; height: 22px; }
+.info-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--gray); margin-bottom: 0.7rem;
+}
+.info-card a, .info-card p {
+  font-size: 0.92rem; color: var(--text);
+  line-height: 1.65; font-weight: 500;
+  display: block;
+}
+.info-card a { transition: color 0.2s; }
+.info-card a:hover { color: var(--blue); }
+.info-card .info-note {
+  font-size: 0.75rem; color: var(--gray); font-weight: 400; margin-top: 0.4rem;
+}
+
+/* ============================================================
+   SECTION 3 — CONTACT FORM + WHATSAPP
+   ============================================================ */
+.form-section {
+  background: #fff;
+  padding: 5rem 5.5%;
+}
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.45rem; }
+.form-group label {
+  font-size: 0.78rem; font-weight: 700;
+  color: var(--text); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem; color: var(--text);
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(26,79,214,0.10);
+  background: #fff;
+}
+.form-group textarea { resize: vertical; min-height: 130px; }
+.form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 16px; padding-right: 2.5rem; }
+.form-submit {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: var(--blue); color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.98rem; font-weight: 800;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 0.95rem 2.4rem; border-radius: 6px;
+  border: none; cursor: pointer;
+  transition: background 0.18s, transform 0.15s, box-shadow 0.15s;
+  align-self: flex-start;
+}
+.form-submit:hover {
+  background: #1642b8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(26,79,214,0.38);
+}
+.form-note {
+  font-size: 0.75rem; color: var(--gray); margin-top: 0.2rem;
+}
+
+/* Right sidebar */
+.form-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* WhatsApp card */
+.whatsapp-card {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.whatsapp-card .wa-head {
+  display: flex; align-items: center; gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+.wa-icon {
+  width: 46px; height: 46px; border-radius: 10px;
+  background: #22c55e;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.wa-icon svg { width: 24px; height: 24px; color: #fff; }
+.wa-head-text h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem; font-weight: 800; text-transform: uppercase;
+  color: #166534; letter-spacing: 0.04em;
+}
+.wa-head-text p { font-size: 0.78rem; color: #4ade80; font-weight: 500; }
+.whatsapp-card p {
+  font-size: 0.88rem; color: #166534; line-height: 1.7; margin-bottom: 1.3rem;
+}
+.wa-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  background: #22c55e; color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.88rem 1.5rem; border-radius: 6px;
+  transition: background 0.18s, transform 0.15s;
+}
+.wa-btn:hover { background: #16a34a; transform: translateY(-1px); }
+.wa-btn svg { width: 18px; height: 18px; }
+
+/* Quick contact card */
+.quick-card {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.quick-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem; font-weight: 800;
+  color: #fff; text-transform: uppercase; letter-spacing: 0.07em;
+  margin-bottom: 1.2rem;
+}
+.quick-item {
+  display: flex; align-items: flex-start; gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.quick-item:last-child { border-bottom: none; padding-bottom: 0; }
+.quick-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--blue-lt); flex-shrink: 0; margin-top: 6px;
+}
+.quick-item-label {
+  font-size: 0.68rem; font-weight: 700; color: rgba(255,255,255,0.35);
+  text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 0.2rem;
+}
+.quick-item-val {
+  font-size: 0.88rem; color: rgba(255,255,255,0.80); line-height: 1.55;
+}
+.quick-item-val a { color: rgba(255,255,255,0.80); transition: color 0.2s; }
+.quick-item-val a:hover { color: var(--blue-lt); }
+
+/* Hours card */
+.hours-card {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+}
+.hours-card h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem; font-weight: 800;
+  color: var(--text); text-transform: uppercase; letter-spacing: 0.07em;
+  margin-bottom: 1rem;
+}
+.hours-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-day { color: var(--gray); font-weight: 500; }
+.hours-time { color: var(--text); font-weight: 600; }
+.hours-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(26,79,214,0.08); color: var(--blue);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase; padding: 0.22rem 0.65rem; border-radius: 4px;
+}
+.hours-badge::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--blue); animation: blink 1.6s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ============================================================
+   SECTION 4 — MAP / LOCATION
+   ============================================================ */
+.map-section {
+  background: var(--navy2);
+  padding: 5rem 5.5%;
+}
+.map-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+.map-embed {
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 400px;
+  background: var(--navy);
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+.map-embed iframe {
+  width: 100%; height: 100%; border: none; display: block; filter: grayscale(20%) brightness(0.9);
+}
+.map-overlay-badge {
+  position: absolute; bottom: 16px; left: 16px;
+  background: var(--navy); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.map-overlay-badge svg { width: 18px; height: 18px; color: var(--blue-lt); flex-shrink: 0; }
+.map-overlay-badge p { font-size: 0.78rem; color: rgba(255,255,255,0.75); line-height: 1.45; }
+.map-overlay-badge strong { color: #fff; font-weight: 600; display: block; }
+
+.coverage-points { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+.coverage-pt {
+  display: flex; align-items: flex-start; gap: 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  transition: border-color 0.2s;
+}
+.coverage-pt:hover { border-color: rgba(122,173,255,0.25); }
+.cpt-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--blue-lt); flex-shrink: 0; margin-top: 5px;
+  box-shadow: 0 0 0 3px rgba(122,173,255,0.15);
+}
+.cpt-name { font-size: 0.92rem; font-weight: 600; color: #fff; margin-bottom: 0.15rem; }
+.cpt-detail { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+/* ============================================================
+   SECTION 5 — CTA BAND
+   ============================================================ */
+.cta-section {
+  background: var(--navy);
+  padding: 5rem 5.5%;
+}
+.cta-inner {
+  background: linear-gradient(135deg, var(--blue) 0%, #0d3ba8 55%, #04090f 100%);
+  border-radius: var(--radius);
+  padding: 5rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-inner::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: rgba(122,173,255,0.10);
+}
+.cta-inner::after {
+  content: ''; position: absolute; bottom: -80px; left: -80px;
+  width: 260px; height: 260px; border-radius: 50%;
+  background: rgba(240,165,0,0.07);
+}
+.cta-inner h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  color: #fff; text-transform: uppercase; letter-spacing: 0.04em;
+  position: relative; z-index: 1; margin-bottom: 0.8rem;
+}
+.cta-inner p {
+  color: rgba(255,255,255,0.65);
+  max-width: 500px; margin: 0 auto 2.2rem;
+  font-size: 0.97rem; position: relative; z-index: 1;
+}
+.cta-btns {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  position: relative; z-index: 1;
+}
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--gold); color: #07050a;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 800;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 0.9rem 2rem; border-radius: 6px;
+  transition: background 0.18s, transform 0.15s;
+}
+.btn-gold:hover { background: #ffc844; transform: translateY(-2px); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.28);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 0.9rem 2rem; border-radius: 6px;
+  backdrop-filter: blur(6px);
+  transition: background 0.18s, border-color 0.15s, transform 0.15s;
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: #020609; padding: 4rem 5.5% 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand img { height: 44px; width: auto; margin-bottom: 1rem; }
+.footer-brand p { color: rgba(255,255,255,0.38); font-size: 0.85rem; line-height: 1.75; margin-bottom: 1.5rem; }
+.footer-socials { display: flex; gap: 0.75rem; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.09);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.45); transition: all 0.2s;
+}
+.social-btn:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+.social-btn svg { width: 15px; height: 15px; }
+.footer-col h4 {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem;
+  font-weight: 800; color: #fff; text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 1.2rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col ul li a { color: rgba(255,255,255,0.38); font-size: 0.84rem; transition: color 0.2s; }
+.footer-col ul li a:hover { color: rgba(255,255,255,0.80); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 1.5rem; text-align: center;
+}
+.footer-bottom p { color: rgba(255,255,255,0.25); font-size: 0.78rem; margin-bottom: 0.25rem; }
+
+/* ============================================================
+   TOAST NOTIFICATION
+   ============================================================ */
+.toast {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
+  background: #1a4fd6; color: #fff;
+  padding: 1rem 1.5rem; border-radius: var(--radius-sm);
+  font-size: 0.88rem; font-weight: 500;
+  box-shadow: 0 8px 32px rgba(26,79,214,0.35);
+  display: flex; align-items: center; gap: 0.7rem;
+  transform: translateY(80px); opacity: 0;
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .info-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 900px) {
+  .form-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .map-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .form-sidebar { order: -1; }
+}
+@media (max-width: 640px) {
+  .page-hero-content { padding: 3.5rem 5% 3rem; }
+  .page-hero-content h1 { font-size: clamp(2.6rem, 12vw, 3.8rem); }
+  .info-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-inner { padding: 3rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .map-embed { height: 280px; }
+}
+@media (max-width: 400px) {
+  .info-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="logo.png" alt="Abounding Grace Logistics"/>
+    </a>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="fleet.html">Fleet</a>
+    <a href="tracking.html">Track Shipment</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════ SECTION 1 — PAGE HERO ═══════════ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="current">Contact</span>
+    </div>
+    <div class="page-eyebrow">
+      <span></span> Get in Touch
+    </div>
+    <h1>Let's Move <span>Your Cargo.</span></h1>
+    <p>Reach out for a free quote, route enquiry, or to discuss a long-term haulage contract. Our team responds within hours — 24 hours a day, 7 days a week.</p>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 2 — CONTACT INFO CARDS ═══════════ -->
+<section class="info-section">
+  <div class="section-label">How to Reach Us</div>
+  <h2 class="section-title">Contact <span>Information</span></h2>
+  <div class="info-grid">
+
+    <div class="info-card">
+      <div class="info-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      </div>
+      <h3>Phone</h3>
+      <a href="tel:+263772816090">+263 772 816 090</a>
+      <p class="info-note">Available 24 hours, 7 days a week</p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
+      <h3>Email</h3>
+      <a href="mailto:jimikchin@gmail.com">jimikchin@gmail.com</a>
+      <p class="info-note">We reply within 2–4 hours</p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      </div>
+      <h3>Office Address</h3>
+      <p>1486 Tongai Road<br/>Houghton Park, Harare<br/>Zimbabwe</p>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h3>Operating Hours</h3>
+      <p>Monday – Sunday</p>
+      <p style="font-weight:700;color:var(--blue);margin-top:0.2rem">24 Hours / 7 Days</p>
+      <p class="info-note">We never close — cargo doesn't wait</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 3 — FORM + WHATSAPP ═══════════ -->
+<section class="form-section">
+  <div class="section-label">Send a Message</div>
+  <h2 class="section-title">Get a <span>Free Quote</span></h2>
+  <p class="section-sub" style="max-width:520px">Fill in the form and our team will get back to you with a tailored quote. Or message us directly on WhatsApp for an instant response.</p>
+
+  <div class="form-layout">
+
+    <!-- Contact Form -->
+    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name *</label>
+          <input type="text" id="fname" name="fname" placeholder="e.g. Tendai" required/>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name *</label>
+          <input type="text" id="lname" name="lname" placeholder="e.g. Moyo" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+263 7XX XXX XXX" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="company">Company / Organisation</label>
+        <input type="text" id="company" name="company" placeholder="Your company name (optional)"/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="service">Service Required *</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service...</option>
+            <option>Bulk Road Freight</option>
+            <option>Contract Haulage</option>
+            <option>Mining Ore Transport</option>
+            <option>Agricultural Haulage</option>
+            <option>Regional Delivery</option>
+            <option>Other / General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="route">Route</label>
+          <input type="text" id="route" name="route" placeholder="e.g. Harare → Johannesburg"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Cargo Details & Message *</label>
+        <textarea id="message" name="message" placeholder="Tell us about your cargo — type, weight, timeline, and any other details..." required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="form-submit">
+          Send Enquiry
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-note" style="margin-top:0.7rem">* Required fields. We respond within 2–4 hours.</p>
+      </div>
+    </form>
+
+    <!-- Right Sidebar -->
+    <div class="form-sidebar">
+
+      <!-- WhatsApp -->
+      <div class="whatsapp-card">
+        <div class="wa-head">
+          <div class="wa-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="wa-head-text">
+            <h3>WhatsApp Us</h3>
+            <p>● Online — Instant replies</p>
+          </div>
+        </div>
+        <p>Skip the form. Message us directly on WhatsApp for a fast quote or to track an active shipment. We respond immediately.</p>
+        <a href="https://wa.me/263772816090?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20logistics%20services." target="_blank" rel="noopener" class="wa-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- Quick Contact -->
+      <div class="quick-card">
+        <h3>Quick Contact</h3>
+        <div class="quick-item">
+          <div class="quick-dot"></div>
+          <div>
+            <div class="quick-item-label">Phone</div>
+            <div class="quick-item-val"><a href="tel:+263772816090">+263 772 816 090</a></div>
+          </div>
+        </div>
+        <div class="quick-item">
+          <div class="quick-dot"></div>
+          <div>
+            <div class="quick-item-label">Email</div>
+            <div class="quick-item-val"><a href="mailto:jimikchin@gmail.com">jimikchin@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="quick-item">
+          <div class="quick-dot"></div>
+          <div>
+            <div class="quick-item-label">Address</div>
+            <div class="quick-item-val">1486 Tongai Rd, Houghton Park, Harare</div>
+          </div>
+        </div>
+        <div class="quick-item">
+          <div class="quick-dot"></div>
+          <div>
+            <div class="quick-item-label">Registration</div>
+            <div class="quick-item-val">Reg. No. 19347/2021</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours -->
+      <div class="hours-card">
+        <h3>Operating Hours</h3>
+        <div class="hours-row">
+          <span class="hours-day">Monday – Friday</span>
+          <span class="hours-badge">24 / 7</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Saturday</span>
+          <span class="hours-badge">24 / 7</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Sunday</span>
+          <span class="hours-badge">24 / 7</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Public Holidays</span>
+          <span class="hours-badge">24 / 7</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 4 — MAP / LOCATION ═══════════ -->
+<section class="map-section">
+  <div class="section-label on-dark">Our Location</div>
+  <h2 class="section-title white">Find Us in <span>Harare</span></h2>
+  <p class="section-sub white" style="max-width:520px;margin-bottom:0">Our main office and dispatch hub is in Houghton Park, Harare — centrally located for easy access across Zimbabwe's capital.</p>
+
+  <div class="map-layout">
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5!2d31.0522!3d-17.8252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ5JzMwLjciUyAzMcKwMDMnMDcuOSJF!5e0!3m2!1sen!2szw!4v1620000000000!5m2!1sen!2szw"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Abounding Grace Logistics Office Location">
+      </iframe>
+      <div class="map-overlay-badge">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <p><strong>Abounding Grace Logistics</strong>1486 Tongai Rd, Houghton Park, Harare</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-sub white" style="margin-bottom:1.8rem">Our support centers and operational hubs span the entire Southern African region. Contact us to arrange cargo pickup from any point.</p>
+      <div class="coverage-points">
+        <div class="coverage-pt">
+          <div class="cpt-dot"></div>
+          <div>
+            <div class="cpt-name">Harare HQ</div>
+            <div class="cpt-detail">1486 Tongai Road, Houghton Park — Main dispatch & admin office</div>
+          </div>
+        </div>
+        <div class="coverage-pt">
+          <div class="cpt-dot"></div>
+          <div>
+            <div class="cpt-name">Beitbridge Border</div>
+            <div class="cpt-detail">Key border crossing to South Africa — support team stationed</div>
+          </div>
+        </div>
+        <div class="coverage-pt">
+          <div class="cpt-dot"></div>
+          <div>
+            <div class="cpt-name">Musina, South Africa</div>
+            <div class="cpt-detail">First SA stop — freight coordination & driver changeover</div>
+          </div>
+        </div>
+        <div class="coverage-pt">
+          <div class="cpt-dot"></div>
+          <div>
+            <div class="cpt-name">Johannesburg Gateway</div>
+            <div class="cpt-detail">Bulk delivery hub for Greater Johannesburg & Pretoria</div>
+          </div>
+        </div>
+        <div class="coverage-pt">
+          <div class="cpt-dot"></div>
+          <div>
+            <div class="cpt-name">Lusaka, Zambia</div>
+            <div class="cpt-detail">Northern corridor operations for Zambia & DRC routes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECTION 5 — CTA ═══════════ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to Get Moving?</h2>
+    <p>Talk to our team now. Free quotes, fast replies, and reliable freight across Southern Africa — every time.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/263772816090?text=Hello%2C%20I%20need%20a%20logistics%20quote." target="_blank" rel="noopener" class="btn-gold">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us Now
+      </a>
+      <a href="tel:+263772816090" class="btn-outline-white">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="17" height="17"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call +263 772 816 090
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Abounding Grace Logistics"/>
+      <p>Zimbabwe's trusted heavy-duty transport and logistics company. Moving bulk cargo across Southern and Central Africa since 2022.</p>
+      <div class="footer-socials">
+        <a class="social-btn" href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a class="social-btn" href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+        <a class="social-btn" href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="fleet.html">Our Fleet</a></li>
+        <li><a href="tracking.html">Track Shipment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Bulk Road Freight</a></li>
+        <li><a href="services.html">Contract Haulage</a></li>
+        <li><a href="services.html">Mining Transport</a></li>
+        <li><a href="services.html">Agricultural Haulage</a></li>
+        <li><a href="services.html">Regional Delivery</a></li>
+        <li><a href="services.html">Satellite Tracking</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">1486 Tongai Road, Houghton Park, Harare</a></li>
+        <li><a href="tel:+263772816090">+263 772 816 090</a></li>
+        <li><a href="mailto:jimikchin@gmail.com">jimikchin@gmail.com</a></li>
+        <li><a href="https://wa.me/263772816090" target="_blank">WhatsApp: +263 772 816 090</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Abounding Grace Logistics (Pvt) Ltd. All rights reserved.</p>
+    <p>Registered No. 19347/2021 · Zimbabwe</p>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M5 13l4 4L19 7"/></svg>
+  Message sent! We'll be in touch within 2–4 hours.
+</div>
+
+<script>
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  // Build WhatsApp message from form data
+  const name = `${data.get('fname')} ${data.get('lname')}`;
+  const phone = data.get('phone');
+  const email = data.get('email');
+  const company = data.get('company') || 'N/A';
+  const service = data.get('service');
+  const route = data.get('route') || 'N/A';
+  const message = data.get('message');
+
+  const waText = encodeURIComponent(
+    `*New Enquiry — Abounding Grace Logistics Website*\n\n` +
+    `👤 Name: ${name}\n` +
+    `📞 Phone: ${phone}\n` +
+    `📧 Email: ${email}\n` +
+    `🏢 Company: ${company}\n` +
+    `🚛 Service: ${service}\n` +
+    `🗺️ Route: ${route}\n\n` +
+    `📝 Message:\n${message}`
+  );
+
+  // Open WhatsApp with the pre-filled message
+  window.open(`https://wa.me/263772816090?text=${waText}`, '_blank');
+
+  // Show toast
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+
+  form.reset();
+}
+</script>
+</body>
+</html>
