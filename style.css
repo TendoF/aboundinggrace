@@ -48,9 +48,11 @@ nav {
   background: rgba(10,22,40,0.96);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,180,216,0.15);
-  transition: all 0.3s;
+  transition: transform 0.35s ease, height 0.3s ease, background 0.3s ease;
+  will-change: transform;
 }
 nav.scrolled { height: 64px; background: rgba(10,22,40,0.99); }
+nav.nav-hidden { transform: translateY(-100%); }
 
 .nav-logo img { height: 46px; width: auto; }
 
@@ -84,7 +86,8 @@ nav.scrolled { height: 64px; background: rgba(10,22,40,0.99); }
 .nav-cta:hover { background: var(--blue-light) !important; transform: translateY(-1px); }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-.hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+.hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: transform 0.35s ease, height 0.3s ease, background 0.3s ease;
+  will-change: transform; }
 
 /* ── BTN ── */
 .btn {
@@ -129,7 +132,8 @@ section { padding: 96px 5%; }
 .card {
   background: var(--card-bg); border-radius: var(--radius);
   border: 1px solid var(--border); padding: 2rem;
-  transition: all 0.3s; box-shadow: 0 2px 16px rgba(10,22,40,0.06);
+  transition: transform 0.35s ease, height 0.3s ease, background 0.3s ease;
+  will-change: transform; box-shadow: 0 2px 16px rgba(10,22,40,0.06);
 }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--blue); }
 
@@ -266,7 +270,8 @@ section { padding: 96px 5%; }
 .why-card {
   background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius); padding: 2rem;
-  transition: all 0.3s;
+  transition: transform 0.35s ease, height 0.3s ease, background 0.3s ease;
+  will-change: transform;
 }
 .why-card:hover { background: rgba(26,79,214,0.15); border-color: rgba(26,79,214,0.4); transform: translateY(-4px); }
 .why-card h3 { color: #fff; font-size: 1.25rem; margin: 1rem 0 0.5rem; }
@@ -498,4 +503,29 @@ footer {
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
   .nav-logo img { height: 38px; }
+}
+
+/* ── GLOBAL MOBILE TEXT FIXES ── */
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .section-sub { font-size: 0.9rem; }
+  p { font-size: 0.9rem; }
+  .btn { font-size: 0.85rem; padding: 0.75rem 1.4rem; }
+  .page-hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .page-hero p { font-size: 0.9rem; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+  h3 { font-size: clamp(1.1rem, 4vw, 1.4rem); }
+  .card { padding: 1.4rem; }
+  .hero h1 { font-size: clamp(1.9rem, 8.5vw, 2.8rem) !important; }
+  .hero-sub { font-size: 0.88rem !important; }
+  .hero-tag { font-size: 0.7rem !important; }
+  section { padding: 56px 5%; }
+}
+@media (max-width: 480px) {
+  .section-title { font-size: clamp(1.4rem, 7vw, 1.8rem); }
+  .hero h1 { font-size: clamp(1.7rem, 9vw, 2.4rem) !important; }
+  .hero-stat-num { font-size: 1.6rem !important; }
+  .hero-stat-lbl { font-size: 0.65rem !important; }
+  section { padding: 48px 5%; }
 }
