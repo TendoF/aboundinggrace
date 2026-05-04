@@ -33,28 +33,29 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
-   NAVBAR
+   NAVBAR — WHITE
    ============================================================ */
 #navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%; height: 72px;
-  background: rgba(4,9,15,0.88);
+  padding: 0 5%; height: 100px;
+  background: rgba(255,255,255,0.98);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: background 0.3s;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: background 0.3s, height 0.3s;
 }
-#navbar.scrolled { background: rgba(4,9,15,0.98); }
-.nav-logo img { height: 42px; width: auto; }
+#navbar.scrolled { background: rgba(255,255,255,1); height: 80px; }
+.nav-logo img { height: 86px; width: auto; transition: height 0.3s; }
+#navbar.scrolled .nav-logo img { height: 68px; }
 .nav-logo a { display: flex; align-items: center; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a {
   font-size: 0.84rem; font-weight: 500;
-  color: rgba(255,255,255,0.68); transition: color 0.2s;
+  color: rgba(10,22,40,0.75); transition: color 0.2s;
 }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-links a:hover, .nav-links a.active { color: var(--blue); }
 .nav-links .nav-cta {
-  background: var(--blue); color: #fff;
+  background: var(--blue); color: #fff !important;
   font-weight: 700; font-size: 0.78rem;
   padding: 0.48rem 1.2rem; border-radius: 5px;
   letter-spacing: 0.05em; text-transform: uppercase;
@@ -62,19 +63,20 @@ img { max-width: 100%; display: block; }
 }
 .nav-links .nav-cta:hover { background: #1642b8; box-shadow: 0 4px 18px rgba(26,79,214,0.4); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-.hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+
 @media (max-width: 900px) {
   .hamburger { display: flex; }
   .nav-links {
     display: none; position: fixed;
-    top: 72px; left: 0; right: 0;
-    background: rgba(4,9,15,0.98);
+    top: 100px; left: 0; right: 0;
+    background: rgba(255,255,255,0.98);
     flex-direction: column; gap: 0;
     padding: 1.5rem 5%;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); width: 100%; }
+  .nav-links a { padding: 0.85rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); width: 100%; color: rgba(10,22,40,0.75); }
   .nav-links .nav-cta { margin-top: 1rem; text-align: center; }
 }
 
@@ -83,7 +85,7 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .page-hero {
   position: relative;
-  padding-top: 72px;
+  padding-top: 100px;
   min-height: 52vh;
   display: flex; align-items: center;
   overflow: hidden;
@@ -91,7 +93,7 @@ img { max-width: 100%; display: block; }
 }
 .page-hero-bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=85') center 40% / cover no-repeat;
+  background: url('gm3.png') center 40% / cover no-repeat;
 }
 .page-hero-overlay {
   position: absolute; inset: 0;
@@ -130,7 +132,6 @@ img { max-width: 100%; display: block; }
   color: rgba(255,255,255,0.60);
   line-height: 1.78; max-width: 480px;
 }
-/* Breadcrumb */
 .breadcrumb {
   display: flex; align-items: center; gap: 0.5rem;
   margin-bottom: 1.5rem;
@@ -244,7 +245,6 @@ img { max-width: 100%; display: block; }
   align-items: start;
 }
 
-/* Form */
 .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
 .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
@@ -295,10 +295,8 @@ img { max-width: 100%; display: block; }
   font-size: 0.75rem; color: var(--gray); margin-top: 0.2rem;
 }
 
-/* Right sidebar */
 .form-sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
 
-/* WhatsApp card */
 .whatsapp-card {
   background: #f0fdf4;
   border: 1.5px solid #86efac;
@@ -337,7 +335,6 @@ img { max-width: 100%; display: block; }
 .wa-btn:hover { background: #16a34a; transform: translateY(-1px); }
 .wa-btn svg { width: 18px; height: 18px; }
 
-/* Quick contact card */
 .quick-card {
   background: var(--navy);
   border-radius: var(--radius);
@@ -369,7 +366,6 @@ img { max-width: 100%; display: block; }
 .quick-item-val a { color: rgba(255,255,255,0.80); transition: color 0.2s; }
 .quick-item-val a:hover { color: var(--blue-lt); }
 
-/* Hours card */
 .hours-card {
   background: var(--off-white);
   border: 1px solid var(--border);
@@ -587,6 +583,14 @@ footer {
   .map-layout { grid-template-columns: 1fr; gap: 3rem; }
   .form-sidebar { order: -1; }
 }
+@media (max-width: 768px) {
+  #navbar { height: 80px; }
+  #navbar.scrolled { height: 68px; }
+  .nav-logo img { height: 64px; }
+  #navbar.scrolled .nav-logo img { height: 52px; }
+  .nav-links { top: 80px; }
+  .page-hero { padding-top: 80px; }
+}
 @media (max-width: 640px) {
   .page-hero-content { padding: 3.5rem 5% 3rem; }
   .page-hero-content h1 { font-size: clamp(2.6rem, 12vw, 3.8rem); }
@@ -595,6 +599,12 @@ footer {
   .cta-inner { padding: 3rem 1.5rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .map-embed { height: 280px; }
+}
+@media (max-width: 480px) {
+  #navbar { height: 70px; }
+  .nav-logo img { height: 54px; }
+  .nav-links { top: 70px; }
+  .page-hero { padding-top: 70px; }
 }
 @media (max-width: 400px) {
   .info-grid { grid-template-columns: 1fr; }
@@ -615,7 +625,7 @@ footer {
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="fleet.html">Fleet</a>
-    <a href="track.html">Track Shipment</a>
+    <a href="track.html">Track Cargo</a>
     <a href="contact.html" class="active">Contact</a>
     <a href="contact.html" class="nav-cta">Get a Quote</a>
   </div>
@@ -766,7 +776,7 @@ footer {
             <p>● Online — Instant replies</p>
           </div>
         </div>
-        <p>Skip the form. Message us directly on WhatsApp for a fast quote or to track an active shipment. We respond immediately.</p>
+        <p>Skip the form. Message us directly on WhatsApp for a fast quote or to track an active cargo. We respond immediately.</p>
         <a href="https://wa.me/263772816090?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20your%20logistics%20services." target="_blank" rel="noopener" class="wa-btn">
           <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Chat on WhatsApp
@@ -930,7 +940,7 @@ footer {
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="fleet.html">Our Fleet</a></li>
-        <li><a href="tracking.html">Track Shipment</a></li>
+        <li><a href="tracking.html">Track Cargo</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -980,7 +990,6 @@ function handleSubmit(e) {
   const form = e.target;
   const data = new FormData(form);
 
-  // Build WhatsApp message from form data
   const name = `${data.get('fname')} ${data.get('lname')}`;
   const phone = data.get('phone');
   const email = data.get('email');
@@ -1000,10 +1009,8 @@ function handleSubmit(e) {
     `📝 Message:\n${message}`
   );
 
-  // Open WhatsApp with the pre-filled message
   window.open(`https://wa.me/263772816090?text=${waText}`, '_blank');
 
-  // Show toast
   const toast = document.getElementById('toast');
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 4000);
