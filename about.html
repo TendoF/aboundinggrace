@@ -50,6 +50,44 @@
 
 @media(max-width:900px){ .mission-grid{grid-template-columns:1fr;} .team-grid{grid-template-columns:1fr 1fr;} .cert-grid{grid-template-columns:1fr 1fr;} }
 @media(max-width:580px){ .team-grid{grid-template-columns:1fr;} .cert-grid{grid-template-columns:1fr;} .values-list{grid-template-columns:1fr;} }
+
+
+
+
+
+
+/* ===== MOTTO SECTION ===== */
+.motto-section{background:#ffffff;padding:7rem 5%;position:relative;overflow:hidden}
+.motto-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue) 0%,var(--cyan) 50%,var(--gold) 100%)}
+.motto-section::after{content:'COMMITMENT';position:absolute;bottom:-40px;right:-20px;font-family:'Bebas Neue',sans-serif;font-size:14rem;color:rgba(26,79,214,.04);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.01em}
+.motto-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.motto-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.motto-left{padding-right:2rem}
+.motto-rule{width:48px;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:3px;margin-bottom:1.5rem}
+.motto-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+.motto-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5vw,4.6rem);line-height:.92;color:#0d1a2e;letter-spacing:.01em;text-transform:uppercase;margin-bottom:2rem}
+.motto-headline em{color:var(--blue);font-style:normal}
+.motto-body{font-size:.97rem;color:#4a5568;line-height:1.9;margin-bottom:2.5rem;font-weight:400}
+.motto-btn{display:inline-flex;align-items:center;gap:.75rem;background:#0d1a2e;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2rem;border-radius:3px;transition:all .25s;position:relative;overflow:hidden}
+.motto-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--blue),var(--cyan));opacity:0;transition:opacity .25s}
+.motto-btn:hover::before{opacity:1}
+.motto-btn svg{width:18px;height:18px;flex-shrink:0;position:relative;z-index:1;transition:transform .2s}
+.motto-btn:hover svg{transform:translateX(4px)}
+.motto-btn span,.motto-btn{position:relative}
+.motto-btn:hover{box-shadow:0 8px 32px rgba(26,79,214,.4)}
+.motto-btn > *{position:relative;z-index:1}
+.motto-right{}
+.motto-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:#e5e7eb;border:1.5px solid #e5e7eb;border-radius:12px;overflow:hidden;margin-bottom:1.5rem}
+.motto-pillar{background:#fff;padding:2rem 1.5rem;transition:background .2s}
+.motto-pillar:hover{background:#f0f6ff}
+.motto-pillar-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:rgba(26,79,214,.18);line-height:1;margin-bottom:.5rem}
+.motto-pillar-title{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#0d1a2e;margin-bottom:.4rem}
+.motto-pillar-text{font-size:.8rem;color:#6b7280;line-height:1.6}
+.motto-quote-strip{background:linear-gradient(135deg,#0d1a2e 0%,#1a4fd6 100%);border-radius:8px;padding:1.5rem 2rem;display:flex;align-items:center;gap:1rem}
+.motto-quote-mark{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:rgba(255,255,255,.3);line-height:.8;flex-shrink:0}
+.motto-quote-text{color:rgba(255,255,255,.85);font-size:.88rem;line-height:1.65;font-style:italic}
+@media(max-width:900px){.motto-grid{grid-template-columns:1fr;gap:3rem}.motto-left{padding-right:0}}
+@media(max-width:480px){.motto-card-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -204,42 +242,33 @@
 </section>
 
 
-   
-
-<!-- CERTIFICATIONS -->
-<section style="background:var(--off-white)">
-  <div class="text-center">
-    <div class="section-label">Compliance & Accreditation</div>
-    <h2 class="section-title">Our <span>Certifications</span></h2>
-    <p class="section-sub" style="margin:0 auto">Fully registered, licensed, and compliant with all Zimbabwean and regional regulatory requirements.</p>
-  </div>
-  <div class="cert-grid">
-    <div class="cert-card">
-      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-      <h3>Certificate of Incorporation</h3>
-      <p>Registered under the Companies & Other Business Entities Act (Chapter 24:31)</p>
-      <span class="cert-badge">No. 19347/2021</span>
-    </div>
-    <div class="cert-card">
-      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg></div>
-      <h3>ZIMRA Tax Clearance</h3>
-      <p>Zimbabwe Revenue Authority Tax Clearance Certificate — satisfactory tax position</p>
-      <span class="cert-badge">TIN: 2001473990</span>
-    </div>
-    <div class="cert-card">
-      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg></div>
-      <h3>PRAZ Registration</h3>
-      <p>Procurement Regulatory Authority of Zimbabwe — Bulk & Cargo Transport Services</p>
-      <span class="cert-badge">SB005 · 2025</span>
-    </div>
-    <div class="cert-card">
-      <div class="cert-logo"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-      <h3>Operator Licence</h3>
-      <p>Republic of Zimbabwe Road Motor Transportation Act — Goods Operator Licence</p>
-      <span class="cert-badge">OP00002348</span>
+   <section class="motto-section">
+  <div class="motto-inner">
+    <div class="motto-grid">
+      <div class="motto-left">
+        <div class="motto-rule"></div>
+        <div class="motto-eyebrow">Our Promise</div>
+        <h2 class="motto-headline">Not Just Logistics,<br/><em>But Commitment.</em></h2>
+        <p class="motto-body">Every load we carry is more than cargo — it is someone's livelihood, a factory's supply chain, a community's food. We treat it that way. From the moment your goods leave the gate to the final delivery signature, we are accountable, present, and unwavering.</p>
+        <a href="contact.html" class="motto-btn">Begin Your Journey <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="motto-right">
+        <div class="motto-card-grid">
+          <div class="motto-pillar"><div class="motto-pillar-num">01</div><div class="motto-pillar-title">Trust</div><div class="motto-pillar-text">Every client is a partner. Every promise is kept.</div></div>
+          <div class="motto-pillar"><div class="motto-pillar-num">02</div><div class="motto-pillar-title">Precision</div><div class="motto-pillar-text">Satellite-tracked. On time. Every time.</div></div>
+          <div class="motto-pillar"><div class="motto-pillar-num">03</div><div class="motto-pillar-title">Integrity</div><div class="motto-pillar-text">Fully compliant, insured, and accountable.</div></div>
+          <div class="motto-pillar"><div class="motto-pillar-num">04</div><div class="motto-pillar-title">Care</div><div class="motto-pillar-text">We treat your cargo as if it were our own.</div></div>
+        </div>
+        <div class="motto-quote-strip">
+          <span class="motto-quote-mark">&ldquo;</span>
+          <span class="motto-quote-text">Not just logistics, but commitment &mdash; that is the Abounding Grace standard.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- CTA -->
 <section style="background:var(--blue);padding:80px 5%;text-align:center">
